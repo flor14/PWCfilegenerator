@@ -1,6 +1,5 @@
-# Toolbox-for-PWC-Model
+# PWC file generator
 
 ### Generation of a Weather File for using PWC
 
 
-### Selection of application date
