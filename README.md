@@ -1,6 +1,10 @@
-# PWCfilegenerator
+# PWC file generator package
 
-The goal of `PWCfilegenerator` is to obtain the weather file necessary to obtain the weather files for the models PRZM5 and PWC, that actually free to download from the [USEPA].
+* The goal of `PWCfilegenerator` is to obtain the weather file necessary to run the models PRZM5 and PWC. 
+* These models are available to download for free from the [USEPA] website. 
+* The function `PWCfilegenerator::PWC_fg()` converts weather data to the FORTRAN format read by both models.
+
+This packages makes easier to run pesticide fate transport models use in pesticide risk assessment to new locations.
 
 ## Installation
 
@@ -27,12 +31,12 @@ data <- data.frame( date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
             wind = c(501.6, 368.0, 488.3, 404.5),
             solrad = c(240.3, 244.3, 303.0, 288.5))
 
-
+# Function to generate and save as .dvf the weather file
 PWCfilegenerator::PWC_fg(data = data, # Name of your dataset
                           date = "date", # Name of the column with dates
                           format = "%d/%m/%y", # Format in which the weather file is stored
-                          start ="01/01/81", # Start day of the weather file to create
-                          end = "04/01/81", # End day of the weather file to create
+                          start ="01/01/81", # Start day of the weather file 
+                          end = "04/01/81", # End day of the weather file 
                           precip_cm = "precip", # Name of the column with precipitation values
                           temp_celsius = "tmed", # Name of the column with temperature values
                           pevp_cm = "evap", # Name of the column with panevaporation values
