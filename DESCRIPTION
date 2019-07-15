@@ -4,11 +4,14 @@ Title: Generate climate file for Pesticide in Water Calculator model
 Version: 0.1.0
 Author: Maria Florencia D'Andrea
 Maintainer: Maria Florencia D'Andrea <florencia.dandrea@gmail.com>
-Description: More about what it does (maybe more than one line)
+Description: Generate climate file for Pesticide in Water Calculator model.
     Use four spaces when indenting paragraphs within the Description.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    gdata
+    gdata,
+    lubridate
 RoxygenNote: 6.1.0
+Suggests: 
+    testthat

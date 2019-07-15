@@ -6,13 +6,13 @@
 #' @param date Column name for dates in format
 #' @param start Date to start the weather file in format
 #' @param end  Date to end the weather file in format
+#' @param format_date Format of the dates in the dataset
 #' @param temp_celsius Column name for temperature (Celsius)
 #' @param precip_cm Column name for precipitation (cm/day)
 #' @param ws10_cm_s Column name for wind speed values (cm/sec)
 #' @param pevp_cm Column name for pan pan evaporation data (cm/day)
 #' @param solr_lang Column name for solar radiation (Langley)
 #' @param save_in Path to save the final weather file. Extension .dvf do not need to be specified.
-#'
 #' @return A weather file for PWC and PRZM5 models
 #'
 #' @examples
@@ -21,39 +21,34 @@
 #' @export
 
 
-PWC_fg <- function(data, date, start, end, temp_celsius, precip_cm, ws10_cm_s, pevp_cm, solr_lang, save_in){
+PWC_fg <- function(data, date, start, end, format_date, temp_celsius, precip_cm, ws10_cm_s, pevp_cm, solr_lang, save_in){
 
-  file <- eval(as.symbol(data))
+  file <- data
 
   names(file)[names(file) == as.character(date)] <- "date"
-  names(file)[names(file) == as.character(temp_celsius)] <- "temp_celsius"
   names(file)[names(file) == as.character(precip_cm)] <- "precip_cm"
-  names(file)[names(file) == as.character(ws10_cm_s)] <- "ws10_cm_s"
   names(file)[names(file) == as.character(pevp_cm)] <- "pevp_cm"
+  names(file)[names(file) == as.character(temp_celsius)] <- "temp_celsius"
+  names(file)[names(file) == as.character(ws10_cm_s)] <- "ws10_cm_s"
   names(file)[names(file) == as.character(solr_lang)] <- "solr_lang"
 
-  file_PWC <- data.frame(date = file$date,
-                         temp_celsius = file$temp_celsius,
-                         precip_cm = file$precip_cm,
-                         ws10_cm_s = file$ws10_cm_s,
-                         pevp_cm = file$pevp_cm,
-                         solr_lang = file$solr_lang)
 
   # subset period
-  file_PWC <- file_PWC[file_PWC$date >= as.Date(start) & file_PWC$date <= as.Date(end),]
+  file_PWC <- file[as.Date(file[ ,"date"], format = format_date) >= as.Date(start, format = format_date) & as.Date(file[ ,"date"], format = format_date) <= as.Date(end, format = format_date),]
 
   # Split dates into month, day and year
-  split_dates <- as.character(format(file_PWC$date, "%y-%m-%d"))
+  split_dates <- as.character(format(as.Date(file_PWC[ ,"date"], format = format_date), "%m-%d-%y"))
   split_dates  <- strsplit(split_dates, "-")
   split_dates <- matrix(unlist(split_dates), ncol = 3, byrow = TRUE)
 
   # Weather file
   file_PWC_dates <- data.frame(split_dates,
-                               precip_cm = file_PWC$precip_cm,
-                               pevp_cm = file_PWC$pevp_cm,
-                               temp_celsius = file_PWC$temp_celsius,
-                               ws10_cm_s = file_PWC$ws10_cm_s,
-                               solr_lang = file_PWC$solr_lang)
+                               precip_cm = file_PWC[, "precip_cm"],
+                               pevp_cm = file_PWC[, "pevp_cm"],
+                               temp_celsius = file_PWC[, "temp_celsius"],
+                               ws10_cm_s = file_PWC[, "ws10_cm_s"],
+                               solr_lang = file_PWC[, "solr_lang"])
+
   file_PWC_dates$empty <- NA
   file_PWC_dates <- file_PWC_dates[c("empty","X1", "X2","X3", "precip_cm", "pevp_cm",
                                      "temp_celsius", "ws10_cm_s", "solr_lang" )]
@@ -80,8 +75,8 @@ PWC_fg <- function(data, date, start, end, temp_celsius, precip_cm, ws10_cm_s, p
   file_PWC_dates$X2 <- as.integer(as.character(file_PWC_dates$X2))
   file_PWC_dates$X3 <- as.integer(as.character(file_PWC_dates$X3))
 
-  file_PWC_dates$X2 <- sprintf("%02d", file_PWC_dates$X2)
-  file_PWC_dates$X3 <- sprintf("%02d", file_PWC_dates$X3) #leading zeros
+  file_PWC_dates$X1 <- sprintf("%02d", file_PWC_dates$X1)
+  file_PWC_dates$X2 <- sprintf("%02d", file_PWC_dates$X2) #leading zeros
 
   file_PWC_dates$precip_cm <- as.numeric(file_PWC_dates$precip_cm)
   file_PWC_dates$pevp_cm <- as.numeric(file_PWC_dates$pevp_cm)
