@@ -1,10 +1,14 @@
 # PWC file generator package
 
-* The goal of `PWCfilegenerator` is to obtain the weather file necessary to run the models PRZM5 and PWC. 
-* These models are available to download for free from the [USEPA] website. 
-* The function `PWCfilegenerator::PWC_fg()` converts weather data to the FORTRAN format read by both models.
+* The goal of `PWCfilegenerator` is to obtain the weather file necessary to run the models Pesticide in Water Calculator (PWC) v1.52 and Pesticide Root Zone Model (PRZM5) v5.02. 
 
-This packages makes easier to run pesticide fate transport models use in pesticide risk assessment to new locations.
+* These models used in pesticide risk assessment are available to download for free from the [USEPA website](https://www.epa.gov/pesticide-science-and-assessing-pesticide-risks/models-pesticide-risk-assessment). 
+
+* The function `PWCfilegenerator::PWC_fg()` converts a weather dataset to the file format read as input for PRZM5 and PWC.
+
+Despite PWC model presents a simple and intuitive interface for its users, the weather files should be previously available to make it easy to use.
+
+The function to convert a weather dataset in PWC input file in `PWCfilegenerator` package will facilitate the use of this model in countries where pesticide risk assessment is still underdeveloped.
 
 ## Installation
 
@@ -21,9 +25,9 @@ devtools::install_github("flor14/PWCfilegenerator")
 This is a basic example:
 
 ``` r
-# The input dataset is a weather file with the following columns: dates, precipitation, panevaporation, temperature, wind speed and solar radiation in the units mentioned in [PRZM5 manual]().
+# The input dataset is a weather file with the following columns: dates, precipitation, panevaporation, temperature, wind speed and solar radiation in the units mentioned in [PRZM5 manual](http://bit.ly/2k6yV26).  
 
-# Example of a dataset
+# Example of a small dataset
 data <- data.frame( date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
             precip = c(0.00, 0.10, 0.00, 0.00),
             evap = c(0.30, 0.21, 0.28, 0.28),
@@ -32,18 +36,18 @@ data <- data.frame( date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
             solrad = c(240.3, 244.3, 303.0, 288.5))
 
 # Function to generate and save as .dvf the weather file
-PWCfilegenerator::PWC_fg(data = data, # Name of your dataset
-                          date = "date", # Name of the column with dates
-                          format = "%d/%m/%y", # Format in which the weather file is stored
-                          start ="01/01/81", # Start day of the weather file 
-                          end = "04/01/81", # End day of the weather file 
-                          precip_cm = "precip", # Name of the column with precipitation values
-                          temp_celsius = "tmed", # Name of the column with temperature values
-                          pevp_cm = "evap", # Name of the column with panevaporation values
-                          ws10_cm_s = "wind", # Name of the column with wind speed values
-                          solr_lang = "solrad", # Name of the column with solar radiation values
-                          save_in = "F:/Paquete/WF5" 
-                         )
+PWCfilegenerator::PWC_fg(data = data, # Name of your dataset 
+                          date = "date", # Column name for dates
+                          format = "%d/%m/%y", # Date format
+                          start ="02/01/81", # Date to start the weather file
+                          end = "03/01/81", # Date to end the weather file 
+                          precip_cm = "precip", # Column name for precipitation (cm/day)
+                          pevp_cm = "evap", # Column name for panevaporation data (cm/day)
+                          temp_celsius = "tmed", # Column name for temperature (Celsius)
+                          ws10_cm_s = "wind", # Column name for wind speed values (cm/sec)
+                          solr_lang = "solrad", # Column name for solar radiation (Langley)
+                          save_in = "F:/Paquete/weatherfile" # Path to save the final weather file. Extension .dvf do not need to be specified.                )  
+                                           
 
 ```
 
