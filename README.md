@@ -1,4 +1,4 @@
-# PWC file generator package
+# PWC model file generator
 ### An R package for pesticide risk assessment
 _D'Andrea MF, Brodeur JC_
 
