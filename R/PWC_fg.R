@@ -1,7 +1,9 @@
 #' @title Weather file generation for Pesticide in Water Calculator (PWC) v1.52 and Pesticide Root Zone Model (PRZM5) v5.02
 #'
 #' @description The function \code{\link{PWC_fg}} converts a weather dataset to the file needed as input for PWC and PRZM5.
-#' Units should be converted previously. The format is described in detail in the \href{http://bit.ly/2k6yV26}{PRZM5 manual}.
+#' Units should be converted previously.
+#' If data gaps exist, there are completed with the average value of evaporation, temperature, solar radiation and wind speed entered by the user. The missing values for rain are completed with 0.
+#' The file format is described in detail in the \href{http://bit.ly/2k6yV26}{PRZM5 manual}.
 #'
 #' @param data Name of the dataset.
 #' @param date Column name for dates
