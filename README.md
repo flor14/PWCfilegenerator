@@ -10,7 +10,7 @@ _D'Andrea MF, Brodeur JC_
 
 Despite PWC model presents a simple and intuitive interface for its users, the weather files required to run the model should be previously available to facilitate its use for researchers without programming skills, environmental managers, and regulators.
 
-The function to convert a weather dataset in the PWC input file present in the `PWCfilegenerator` package could increase the use of pesticide fate models in countries where pesticide risk assessment is still underdeveloped.
+The function to convert a weather dataset in the PWC input file at this R package would increase the use of pesticide fate models in countries where pesticide risk assessment is still underdeveloped.
 
 ## Installation
 
