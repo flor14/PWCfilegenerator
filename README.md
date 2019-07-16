@@ -41,7 +41,8 @@ data <- data.frame( date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
             wind = c(501.6, 368.0, 488.3, 404.5),
             solrad = c(240.3, 244.3, 303.0, 288.5))
 
-# Function to convert and save the weather file as a .dvf 
+# Function to convert and save the weather file as a .dvf. It will generate a short weather file of 1 day. You can change the period in relation to your dataset.
+
 PWCfilegenerator::PWC_fg(data = data, # Name of your dataset 
                           date = "date", # Column name for dates
                           format = "%d/%m/%y", # Date format
@@ -52,7 +53,18 @@ PWCfilegenerator::PWC_fg(data = data, # Name of your dataset
                           temp_celsius = "tmed", # Column name for temperature (Celsius)
                           ws10_cm_s = "wind", # Column name for wind speed values (cm/sec)
                           solr_lang = "solrad", # Column name for solar radiation (Langley)
-                          save_in = "F:/Paquete/weatherfile" # Path to save the final weather file. Extension .dvf do not need to be specified.                )  
+                          save_in = "F:/folder/weatherfile_name"PWCfilegenerator::PWC_fg(data = data, # Name of your dataset
+                         date = "date", # Column name for dates
+                         format = "%d/%m/%y", # Date format
+                         start ="02/01/81", # Date to start the weather file
+                         end = "03/01/81", # Date to end the weather file
+                         precip_cm = "precip", # Column name for precipitation (cm/day)
+                         pevp_cm = "evap", # Column name for panevaporation data (cm/day)
+                         temp_celsius = "tmed", # Column name for temperature (Celsius)
+                         ws10_cm_s = "wind", # Column name for wind speed values (cm/sec)
+                         solr_lang = "solrad", # Column name for solar radiation (Langley)
+                         save_in = "C:/folder/filename") # Path to save the final weather file. 
+                         # Extension .dvf *do not* need to be specified.                  
                                       
 
 ```
