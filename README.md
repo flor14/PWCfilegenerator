@@ -18,6 +18,12 @@ library(devtools)
 devtools::install_github("flor14/PWCfilegenerator")
 ```
 
+If for some reason fails, you can download the project as a .zip and install it with this code:
+
+``` r
+install.packages("PWCfilegenerator.zip", repos = NULL)
+```
+
 ## Example
 
 This is a basic example:
