@@ -16,7 +16,7 @@ PWC_fg(data, date, start, end, format_date, temp_celsius, precip_cm,
 
 \item{end}{Date to end the weather file}
 
-\item{format_date}{Date format (more details in as.Date() documentation)}
+\item{format_date}{Date format (more details in \href{https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/strptime}{strptime} documentation)}
 
 \item{temp_celsius}{Column name for temperature (Celsius)}
 
