@@ -15,7 +15,7 @@ You can install `PWCfilegenerator` from this GitHub repo using the following cod
 ``` r
 install.packages("devtools") # if you have not installed "devtools" package
 library(devtools)
-devtools::install_github("flor14/PWCfilegenerator")
+devtools::install_github("flor14/PWC_filegenerator")
 ```
 
 ## Example
