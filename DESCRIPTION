@@ -1,17 +1,18 @@
 Package: PWCfilegenerator
 Type: Package
-Title: Generate climate file for Pesticide in Water Calculator model
-Version: 0.1.0
-Author: Maria Florencia D'Andrea
+Title: Weather file for the models Pesticide in Water Calculator (PWC) v1.52 and Pesticide Root Zone Model (PRZM5).
+Version: 1.0.0
+Author: Maria Florencia D'Andrea, Julie Céline Brodeur
 Maintainer: Maria Florencia D'Andrea <florencia.dandrea@gmail.com>
-Description: Generate climate file for Pesticide in Water Calculator model.
-    Use four spaces when indenting paragraphs within the Description.
+Description: * The goal of `PWCfilegenerator` is to obtain the weather file necessary to run the models Pesticide in Water Calculator (PWC) v1.52 and Pesticide Root Zone Model (PRZM5) v5.02. 
+* These models used in pesticide risk assessment are available to download for free from the [USEPA website](https://www.epa.gov/pesticide-science-and-assessing-pesticide-risks/models-pesticide-risk-assessment). 
+* The function `PWCfilegenerator::PWC_fg()` converts a weather dataset to the file format read as input for PRZM5 and PWC.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    gdata,
-    lubridate
+    gdata (>= 2.18.0),
+    lubridate (>= 1.7.4)
 RoxygenNote: 6.1.0
 Suggests: 
     testthat
