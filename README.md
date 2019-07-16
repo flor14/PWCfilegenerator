@@ -25,7 +25,9 @@ devtools::install_github("flor14/PWCfilegenerator")
 This is a basic example:
 
 ``` r
-# The input dataset is a weather file with the following columns: dates, precipitation, panevaporation, temperature, wind speed and solar radiation in the units mentioned in [PRZM5 manual](http://bit.ly/2k6yV26).  
+# The weather dataset used as input require the following data:
+# dates, precipitation, panevaporation, temperature, wind speed and solar radiation 
+# in the units described in [PRZM5 manual](http://bit.ly/2k6yV26).  
 
 # Example of a small dataset
 data <- data.frame( date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
@@ -35,7 +37,7 @@ data <- data.frame( date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
             wind = c(501.6, 368.0, 488.3, 404.5),
             solrad = c(240.3, 244.3, 303.0, 288.5))
 
-# Function to generate and save as .dvf the weather file
+# Function to convert and save the weather file as a .dvf 
 PWCfilegenerator::PWC_fg(data = data, # Name of your dataset 
                           date = "date", # Column name for dates
                           format = "%d/%m/%y", # Date format
@@ -47,7 +49,7 @@ PWCfilegenerator::PWC_fg(data = data, # Name of your dataset
                           ws10_cm_s = "wind", # Column name for wind speed values (cm/sec)
                           solr_lang = "solrad", # Column name for solar radiation (Langley)
                           save_in = "F:/Paquete/weatherfile" # Path to save the final weather file. Extension .dvf do not need to be specified.                )  
-                                           
+                                      
 
 ```
 
