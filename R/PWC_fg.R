@@ -1,22 +1,43 @@
-#' @title Weather file for Pesticide in Water Calculator (PWC) v1.52 and Pesticide Root Zone Model (PRZM5) v5.02
+#' @title Weather file generation for Pesticide in Water Calculator (PWC) v1.52 and Pesticide Root Zone Model (PRZM5) v5.02
 #'
-#' @description The function \code{\link{PWC_fg}} generates the weather files for \href{https://www.epa.gov/pesticide-science-and-assessing-pesticide-risks/models-pesticide-risk-assessment}{PWC and PRZM5} models from a database in .csv format. The weather file format is described in the \href{https://nepis.epa.gov/Exe/ZyNET.exe/P100K3R4.TXT?ZyActionD=ZyDocument&Client=EPA&Index=2011+Thru+2015&Docs=&Query=&Time=&EndTime=&SearchMethod=1&TocRestrict=n&Toc=&TocEntry=&QField=&QFieldYear=&QFieldMonth=&QFieldDay=&IntQFieldOp=0&ExtQFieldOp=0&XmlQuery=&File=D%3A%5Czyfiles%5CIndex%20Data%5C11thru15%5CTxt%5C00000011%5CP100K3R4.txt&User=ANONYMOUS&Password=anonymous&SortMethod=h%7C-&MaximumDocuments=1&FuzzyDegree=0&ImageQuality=r75g8/r75g8/x150y150g16/i425&Display=hpfr&DefSeekPage=x&SearchBack=ZyActionL&Back=ZyActionS&BackDesc=Results%20page&MaximumPages=1&ZyEntry=1&SeekPage=x&ZyPURL}{PRZM5 manual} guidelines.
+#' @description The function \code{\link{PWC_fg}} converts a weather dataset to the file needed as input for PWC and PRZM5.
+#' Units should be converted previously. The format is described in detail in the \href{http://bit.ly/2k6yV26}{PRZM5 manual}.
 #'
-#' @param data Name of the dataset
-#' @param date Column name for dates in format
-#' @param start Date to start the weather file in format
-#' @param end  Date to end the weather file in format
-#' @param format_date Format of the dates in the dataset
-#' @param temp_celsius Column name for temperature (Celsius)
+#' @param data Name of the dataset.
+#' @param date Column name for dates
+#' @param start Date to start the weather file
+#' @param end  Date to end the weather file
+#' @param format_date Date format (more details in as.Date() documentation)
 #' @param precip_cm Column name for precipitation (cm/day)
+#' @param temp_celsius Column name for temperature (Celsius)
+#' @param pevp_cm Column name for panevaporation data (cm/day)
 #' @param ws10_cm_s Column name for wind speed values (cm/sec)
-#' @param pevp_cm Column name for pan pan evaporation data (cm/day)
 #' @param solr_lang Column name for solar radiation (Langley)
 #' @param save_in Path to save the final weather file. Extension .dvf do not need to be specified.
-#' @return A weather file for PWC and PRZM5 models
+#' @return A weather file in a format read by PWC and PRZM5 models
 #'
 #' @examples
-#' plot_crayons()
+#' # Example of a small dataset.
+#' data <- data.frame( date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
+#'                    precip = c(0.00, 0.10, 0.00, 0.00),
+#'                    evap = c(0.30, 0.21, 0.28, 0.28),
+#'                    tmed = c(9.5, 6.3, 3.5, 5),
+#'                    wind = c(501.6, 368.0, 488.3, 404.5),
+#'                    solrad = c(240.3, 244.3, 303.0, 288.5))
+#'
+#' # Function to convert and save the weather file as a .dvf
+#' PWCfilegenerator::PWC_fg(data = data,
+#'                         date = "date",
+#'                         format = "%d/%m/%y",
+#'                         start ="02/01/81",
+#'                         end = "03/01/81",
+#'                         precip_cm = "precip",
+#'                         pevp_cm = "evap",
+#'                         temp_celsius = "tmed",
+#'                         ws10_cm_s = "wind",
+#'                         solr_lang = "solrad",
+#'                         save_in = "F:/Paquete/weatherfile")
+#'
 #'
 #' @export
 
