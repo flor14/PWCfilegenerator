@@ -1,4 +1,5 @@
 # PWC file generator package
+### An R package for pesticide risk assessment
 
 * The goal of `PWCfilegenerator` is to obtain the weather file necessary to run the models Pesticide in Water Calculator (PWC) v1.52 and Pesticide Root Zone Model (PRZM5) v5.02. 
 
@@ -29,7 +30,7 @@ This is a basic example:
 # dates, precipitation, panevaporation, temperature, wind speed and solar radiation 
 # in the units described in [PRZM5 manual](http://bit.ly/2k6yV26).  
 
-# Example of a small dataset
+# Example of a small dataset. 
 data <- data.frame( date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
             precip = c(0.00, 0.10, 0.00, 0.00),
             evap = c(0.30, 0.21, 0.28, 0.28),
