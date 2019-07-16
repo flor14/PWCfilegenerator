@@ -7,7 +7,7 @@
 #' @param date Column name for dates
 #' @param start Date to start the weather file
 #' @param end  Date to end the weather file
-#' @param format_date Date format (more details in as.Date() documentation)
+#' @param format_date Date format (more details in \href{https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/strptime}{strptime} documentation)
 #' @param precip_cm Column name for precipitation (cm/day)
 #' @param temp_celsius Column name for temperature (Celsius)
 #' @param pevp_cm Column name for panevaporation data (cm/day)
