@@ -77,7 +77,7 @@ PWC_fg <- function(data, date, start, end, format_date, temp_celsius, precip_cm,
   file_PWC_dates$X3 <- year(seq(as.Date("61/01/01"), by = "day",
                                 length.out = nrow(file_PWC_dates)))
 
-  # "Parana" gaps will be filled by the average value
+  # gaps will be filled by the average value
   file_PWC_dates$precip_cm[is.na(file_PWC_dates$precip_cm)] <- 0
   file_PWC_dates$pevp_cm[is.na(file_PWC_dates$pevp_cm)] <- mean(file_PWC_dates$pevp_cm, na.rm = TRUE)
   file_PWC_dates$temp_celsius[is.na(file_PWC_dates$temp_celsius)] <- mean(file_PWC_dates$temp_celsius, na.rm = TRUE)
