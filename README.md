@@ -1,7 +1,6 @@
 # PWC file generator package
-_D'Andrea MF, Brodeur JC_
-
 ### An R package for pesticide risk assessment
+_D'Andrea MF, Brodeur JC_
 
 * The goal of `PWCfilegenerator` is to obtain the weather file necessary to run the models Pesticide in Water Calculator (PWC) v1.52 and Pesticide Root Zone Model (PRZM5) v5.02. 
 
