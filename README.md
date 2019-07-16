@@ -6,9 +6,9 @@ _D'Andrea MF, Brodeur JC_
 
 * These widely used models for pesticide risk assessment are available to download for free from the [USEPA website](https://www.epa.gov/pesticide-science-and-assessing-pesticide-risks/models-pesticide-risk-assessment). 
 
-Despite PWC model presents a simple and intuitive interface for its users, the weather files required to run the model are only available for North America. This makes difficult for researchers without programming skills, environmental managers, and regulators to perform simulations and estimate the pesticide predicted effect concentrations.
+Despite PWC model presents a simple and intuitive interface for its users, the weather files required to run the model are only available for North America. This makes difficult for environmental managers, regulators and researchers who lacks of programming skills to perform simulations and estimate the pesticide predicted effect concentrations in other places of the world.
 
-The function `PWCfilegenerator::PWC_fg()`, able to convert a weather dataset into the PWC or PRZM5 input file, would increase the use of pesticide fate models in countries where pesticide risk assessment is still underdeveloped.
+The function `PWCfilegenerator::PWC_fg()` converts a dataset into the PWC and PRZM5 input weather file. This tool could increase the use of pesticide fate models in countries where pesticide risk assessment is still underdeveloped.
 
 ## Installation
 
