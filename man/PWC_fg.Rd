@@ -16,7 +16,7 @@ PWC_fg(data, date, start, end, format_date, temp_celsius, precip_cm,
 
 \item{end}{Date to end the weather file}
 
-\item{format_date}{Date format (more details in \href{https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/strptime}{strptime} documentation)}
+\item{format_date}{Date format of your dataset (more details in \href{https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/strptime}{strptime} documentation)}
 
 \item{temp_celsius}{Column name for temperature (Celsius)}
 
@@ -46,7 +46,7 @@ data <- data.frame( date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
                    wind = c(501.6, 368.0, 488.3, 404.5),
                    solrad = c(240.3, 244.3, 303.0, 288.5))
 
-# Function to convert and save the weather file as a .dvf
+# Function to convert and save the weather file as a .dvf. It will generate a short weather file of 1 day. You can change the period in relation to your dataset.
 PWCfilegenerator::PWC_fg(data = data,
                         date = "date",
                         format = "\%d/\%m/\%y",
@@ -57,7 +57,7 @@ PWCfilegenerator::PWC_fg(data = data,
                         temp_celsius = "tmed",
                         ws10_cm_s = "wind",
                         solr_lang = "solrad",
-                        save_in = "F:/Paquete/weatherfile")
+                        save_in = "F:/folder/filename") # Path to save the final weather file. Extension .dvf do not need to be specified.                  
 
 
 }
