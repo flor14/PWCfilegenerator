@@ -44,7 +44,7 @@ data <- data.frame( date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
 
 PWCfilegenerator::PWC_fg(data = data, # Name of your dataset 
                           date = "date", # Column name for dates
-                          format = "%d/%m/%y", # Date format (more details in strptime package documentation)
+                          format = "%d/%m/%y", # Date format of your dataset (more details in strptime package documentation)
                           start ="02/01/81", # Date to start the weather file
                           end = "03/01/81", # Date to end the weather file 
                           precip_cm = "precip", # Column name for precipitation (cm/day)
