@@ -30,7 +30,7 @@ This is a basic example:
 ``` r
 # The weather dataset used as input require the following data:
 # dates, precipitation, panevaporation, temperature, wind speed and solar radiation 
-# in the units are described in PRZM5 manual (http://bit.ly/2k6yV26).  
+# the units are described in PRZM5 manual (http://bit.ly/2k6yV26).  
 
 # Example of a small dataset. 
 data <- data.frame( date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
