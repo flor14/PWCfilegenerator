@@ -1,15 +1,13 @@
 #' @title Weather file generation for Pesticide in Water Calculator (PWC) v1.52 and Pesticide Root Zone Model (PRZM5) v5.02
 #'
 #' @description The function \code{\link{PWC_fg}} converts a weather dataset to the file needed as input for PWC and PRZM5.
-#' Units should be converted previously.
-#' If data gaps exist, there are completed with the average value of evaporation, temperature, solar radiation and wind speed entered by the user. The missing values for rain are completed with 0.
-#' The file format is described in detail in the \href{http://bit.ly/2k6yV26}{PRZM5 manual}.
+#' Units should be converted previously. The format is described in detail in the \href{http://bit.ly/2k6yV26}{PRZM5 manual}.
 #'
 #' @param data Name of the dataset.
 #' @param date Column name for dates
 #' @param start Date to start the weather file
 #' @param end  Date to end the weather file
-#' @param format_date Date format of your dataset (more details in \href{https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/strptime}{strptime} documentation)
+#' @param format_date Date format (more details in \href{https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/strptime}{strptime} documentation)
 #' @param precip_cm Column name for precipitation (cm/day)
 #' @param temp_celsius Column name for temperature (Celsius)
 #' @param pevp_cm Column name for panevaporation data (cm/day)
@@ -19,7 +17,7 @@
 #' @return A weather file in a format read by PWC and PRZM5 models
 #'
 #' @examples
-#' # Example of a small dataset. It will generate a short weather file of 1 day. You can change the period in relation to your dataset.
+#' # Example of a small dataset.
 #' data <- data.frame( date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
 #'                    precip = c(0.00, 0.10, 0.00, 0.00),
 #'                    evap = c(0.30, 0.21, 0.28, 0.28),
@@ -38,7 +36,7 @@
 #'                         temp_celsius = "tmed",
 #'                         ws10_cm_s = "wind",
 #'                         solr_lang = "solrad",
-#'                         save_in = "F:/folder/filename")
+#'                         save_in = "F:/filder/filename") # Extension .dvf do not need to be specified.
 #'
 #'
 #' @export
@@ -79,7 +77,7 @@ PWC_fg <- function(data, date, start, end, format_date, temp_celsius, precip_cm,
   file_PWC_dates$X3 <- year(seq(as.Date("61/01/01"), by = "day",
                                 length.out = nrow(file_PWC_dates)))
 
-  # gaps will be filled by the average value
+  # "Parana" gaps will be filled by the average value
   file_PWC_dates$precip_cm[is.na(file_PWC_dates$precip_cm)] <- 0
   file_PWC_dates$pevp_cm[is.na(file_PWC_dates$pevp_cm)] <- mean(file_PWC_dates$pevp_cm, na.rm = TRUE)
   file_PWC_dates$temp_celsius[is.na(file_PWC_dates$temp_celsius)] <- mean(file_PWC_dates$temp_celsius, na.rm = TRUE)
