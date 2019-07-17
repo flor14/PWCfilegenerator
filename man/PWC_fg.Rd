@@ -47,7 +47,7 @@ data <- data.frame(date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
                    solrad = c(240.3, 244.3, 303.0, 288.5))
 
 # Load the package
-library(PWCfilegenerator, quietly = TRUE)
+library(PWCfilegenerator)
 
 # Function to convert and save the weather file as a .dvf
 PWCfilegenerator::PWC_fg(data = data,
