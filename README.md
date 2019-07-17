@@ -43,7 +43,8 @@ data <- data.frame( date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
 # Load the package
 library(PWCfilegenerator)
  
-# Function to convert and save the weather file as a .dvf. It will generate a short weather file of 1 day. You can change the period in relation to your dataset.
+# Function to convert and save the weather file as a .dvf. It will generate a short weather file of 1 day. 
+# You can change the period in relation to your dataset.
 
 PWCfilegenerator::PWC_fg(data = data, # Name of your dataset 
                           date = "date", # Column name for dates
@@ -55,7 +56,7 @@ PWCfilegenerator::PWC_fg(data = data, # Name of your dataset
                           temp_celsius = "tmed", # Column name for temperature (Celsius)
                           ws10_cm_s = "wind", # Column name for wind speed values (cm/sec)
                           solr_lang = "solrad", # Column name for solar radiation (Langley)
-                          save_in = "F:/folder/weatherfile_name") # Path to save the final weather file. Extension .dvf do not need to be specified.                  
+                          save_in = "F:/folder/weatherfile_name") # The extension .dvf will be added automatically.
                                
 ```
 
