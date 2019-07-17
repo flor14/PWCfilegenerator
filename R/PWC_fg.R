@@ -26,7 +26,7 @@
 #'                    solrad = c(240.3, 244.3, 303.0, 288.5))
 #'
 #' # Load the package
-#' library(PWCfilegenerator, warn.conflicts = FALSE)
+#' library(PWCfilegenerator, quietly = TRUE)
 #'
 #' # Function to convert and save the weather file as a .dvf
 #' PWCfilegenerator::PWC_fg(data = data,
