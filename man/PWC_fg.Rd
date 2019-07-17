@@ -57,7 +57,7 @@ PWCfilegenerator::PWC_fg(data = data,
                         temp_celsius = "tmed",
                         ws10_cm_s = "wind",
                         solr_lang = "solrad",
-                        save_in = "F:/folder/filename") # Extension .dvf do not need to be specified.
+                        save_in = "F:/folder/filename") # The extension .dvf will be added automatically.
 
 
 }
