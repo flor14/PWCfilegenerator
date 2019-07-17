@@ -36,7 +36,7 @@
 #'                         temp_celsius = "tmed",
 #'                         ws10_cm_s = "wind",
 #'                         solr_lang = "solrad",
-#'                         save_in = "F:/filder/filename") # Extension .dvf do not need to be specified.
+#'                         save_in = "F:/folder/filename") # Extension .dvf do not need to be specified.
 #'
 #'
 #' @export
