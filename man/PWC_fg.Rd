@@ -2,7 +2,7 @@
 % Please edit documentation in R/PWC_fg.R
 \name{PWC_fg}
 \alias{PWC_fg}
-\title{Weather file generation for Pesticide in Water Calculator (PWC) v1.52 and Pesticide Root Zone Model (PRZM5) v5.02}
+\title{Weather file for Pesticide in Water Calculator (PWC) and Pesticide Root Zone Model (PRZM5)}
 \usage{
 PWC_fg(data, date, start, end, format_date, temp_celsius, precip_cm,
   ws10_cm_s, pevp_cm, solr_lang, save_in)
@@ -31,7 +31,7 @@ PWC_fg(data, date, start, end, format_date, temp_celsius, precip_cm,
 \item{save_in}{Path to save the final weather file. Extension .dvf do not need to be specified.}
 }
 \value{
-A weather file in a format read by PWC and PRZM5 models
+To create a weather file in a format readable by PWC and PRZM5 models
 }
 \description{
 The function \code{\link{PWC_fg}} converts a weather dataset to the file needed as input for PWC and PRZM5.
