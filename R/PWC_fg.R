@@ -9,7 +9,7 @@
 #' @param date Column name for dates
 #' @param start Date to start the weather file
 #' @param end  Date to end the weather file
-#' @param format_date Date format (more details in \href{https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/strptime}{strptime} documentation)
+#' @param format_date Date format of your dataset (more details in \href{https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/strptime}{strptime} documentation)
 #' @param precip_cm Column name for precipitation (cm/day)
 #' @param temp_celsius Column name for temperature (Celsius)
 #' @param pevp_cm Column name for panevaporation data (cm/day)
@@ -19,7 +19,7 @@
 #' @return A weather file in a format read by PWC and PRZM5 models
 #'
 #' @examples
-#' # Example of a small dataset.
+#' # Example of a small dataset. It will generate a short weather file of 1 day. You can change the period in relation to your dataset.
 #' data <- data.frame( date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
 #'                    precip = c(0.00, 0.10, 0.00, 0.00),
 #'                    evap = c(0.30, 0.21, 0.28, 0.28),
@@ -38,7 +38,7 @@
 #'                         temp_celsius = "tmed",
 #'                         ws10_cm_s = "wind",
 #'                         solr_lang = "solrad",
-#'                         save_in = "F:/Paquete/weatherfile")
+#'                         save_in = "F:/folder/filename")
 #'
 #'
 #' @export
