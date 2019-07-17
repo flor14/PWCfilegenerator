@@ -1,7 +1,7 @@
 Package: PWCfilegenerator
 Type: Package
 Title: Weather file for the models Pesticide in Water Calculator (PWC) v1.52 and Pesticide Root Zone Model (PRZM5).
-Version: 1.0.0
+Version: 0.1.0
 Authors@R: c(person("Florencia", "D'Andrea", email = "forencia.dandrea@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-0041-097X")), person("Julie", "Brodeur", email = "celine.brodeur@inta.gob.ar", role = c("ctb"), comment = c(ORCID = "0000-0001-5408-6645")))
 Description: The goal of `PWCfilegenerator` is to obtain the weather file necessary to run the models Pesticide in Water Calculator (PWC) v1.52 and Pesticide Root Zone Model (PRZM5) v5.02. 
     These models used in pesticide risk assessment are available to download for free from the [USEPA website](https://www.epa.gov/pesticide-science-and-assessing-pesticide-risks/models-pesticide-risk-assessment).
