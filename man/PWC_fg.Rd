@@ -39,7 +39,7 @@ Units should be converted previously. The format is described in detail in the \
 }
 \examples{
 # Example of a small dataset.
-data <- data.frame( date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
+data <- data.frame(date = c("01/01/81", "02/01/81", "03/01/81", "04/01/81"),
                    precip = c(0.00, 0.10, 0.00, 0.00),
                    evap = c(0.30, 0.21, 0.28, 0.28),
                    tmed = c(9.5, 6.3, 3.5, 5),
