@@ -1,8 +1,8 @@
-# `PWCfilegenerator v0.1.0`
+# PWCfilegenerator v0.1.0
 ### An R package for creating weather files for PWC
 _D'Andrea MF, Brodeur JC_
 
-The goal of the function PWCfilegenerator::PWC_fg() is to convert a weather dataset to the input file format needed to run the models Pesticide in Water Calculator (PWC) v1.52 and Pesticide Root Zone Model (PRZM5) v5.02.
+The goal of the function `PWCfilegenerator::PWC_fg()` is to convert a weather dataset to the input file format needed to run the models Pesticide in Water Calculator (PWC) v1.52 and Pesticide Root Zone Model (PRZM5) v5.02.
 
 PWC and PRZM5 are mathematical models used for pesticide fate modelling and are free to download from the [USEPA website](https://www.epa.gov/pesticide-science-and-assessing-pesticide-risks/models-pesticide-risk-assessment).  These models are employed for regulatory purposes as part of surface water exposure characterization during pesticide risk assessment.
 
