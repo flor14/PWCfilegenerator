@@ -70,3 +70,6 @@ Contribution to the software:
 
 - Please open an issue in the issue tracker of the project that describes the changes you would like to make to the software and open a pull request with the changes. The description of the pull request must references the corresponding issue.
 
+## How to cite
+
+Maria Florencia D'Andrea, & Julie Céline Brodeur. (2019, July 17). PWCfilegenerator v0.1.0: An R package for creating weather files for PWC (Version 0.1.0). Zenodo. http://doi.org/10.5281/zenodo.3339881
